@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Emojifize 🎺 Your 🎺 Text </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Kavoon|Shrikhand&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylsheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- Scripts -->
+    <script src="/script.js" defer></script>
+    
+  </head>  
+  <body>
+    
+    <main>
+      
+      <header class="header">
+    
+        <h1 class="header__title">
+          <abbr title="Emoji + Emphasize = Emojifize">Emojifize</abbr> 🎺 Your 🎺 Text
+        </h1>
+        <h2 class="header__subtitle">
+          Because sometimes you gotta emphasize stuff with emojis
+        </h2>
+        
+      </header>
+      
+      <section class="emojifize">
+
+        <form class="emojifize__form" id="input">
+
+          <div class="emojifize__text-input">
+          
+            <label class="emojifize__label" for="text-input">Enter text:</label>
+            <textarea class="emojifize__area text" id="text-input" name="text" rows="5" cols="20" placeholder="Lorem ipsum dolor sit amet!"></textarea>
+            
+          </div>
+          
+          <div class="emojifize__emoji-input">
+            
+            <label class="emojifize__label" for="text-emoji">Enter emoji:</label>
+            <input class="emojifize__emoji input" id="text-emoji" minlength="2" maxlength="6" placeholder="👏" />
+            
+          </div>
+          
+          <ul class="emojifize__actions">
+            <li><button class="emojifize__action button">Emojifize 👏 Your 👏 Text</button></li>
+            <li><a class="emojifize__action text" href="#">Clear Form</a></li>
+          </ul>
+
+        </form>
+
+        <div class="emojifize__output">
+          
+          <label class="emojifize__label" for="text-output">Copypasta your Emojifized text:</label>
+          <textarea class="emojifize__result" id="text-output" rows="1" cols="30" readonly="readonly"></textarea>
+          
+        </div>
+        
+      </section>
+      
+      <aside class="reading">
+
+        <h3 class="reading__title">Clap Emoji Meme History</h3>
+
+        <ul class="reading__list">
+          <li class="reading__article">📰 <a class="reading__link" href="https://jezebel.com/your-twitter-trend-analysis-is-not-deep-and-it-s-proba-1769411909">“Your Twitter Trend Analysis Is Not Deep, and It’s Probably Wrong”</a> &ndash; Kara Brown, Jezebel</li>
+          <li class="reading__article">📰 <a class="reading__link" href="https://www.bustle.com/p/what-does-the-clapping-hands-emoji-mean-on-twitter-it-goes-back-much-further-than-its-internet-usage-43594">“What Does The Clapping Hands Emoji Mean On Twitter? It Goes Back Much Further Than Its Internet Usage”</a> &ndash; Lily Feinn, Bustle</li>
+          <li class="reading__article">🕹️ <a class="reading__link" href="https://knowyourmeme.com/memes/clap-emoji-%F0%9F%91%8F">Clap Emoji 👏</a> &ndash; KnowYourMeme.com</li>
+        </ul>
+
+      </aside>
+    
+    </main>
+    
+    <footer>
+      
+    </footer>
+    
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+    
+  </body>
+</html>
