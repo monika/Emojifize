@@ -10,7 +10,11 @@
   --base-font-size: 16px;
   --base-border-radius: 8px;
   
-  --default-font-family: 'Open Sans', helvetica, arial, sans-serif;
+  --base-heading-font-family: 'Cutive', serif;
+  --base-heading-font-weight: 400;
+  
+  --base-body-font-family: 'Montserrat', sans-serif;
+  --base-body-font-weight: 400;
   
 }
 /* Layout */
@@ -24,6 +28,15 @@
 body {
   
   margin: calc(var(--base-spacing) * 2);
+  background-repeat: 
+      repeat-y, 
+      no-repeat, 
+      repeat-y;
+  background-image: 
+    
+      linear-gradient(to right, transparent 0, transparent 50px, pink 51px, transparent 52px),
+      linear-gradient(to bottom, white 0, white 18%, transparent 18%),
+      repeating-linear-gradient(to bottom, transparent 0, transparent 20px, paleturquoise 20px, transparent 21px)
   
 }
 
@@ -31,14 +44,18 @@ body {
 
 body, textarea {
   
-  font-family: var(--default-font-family);
+  font-family: var(--base-body-font-family);
+  font-weight: var(--base-body-font-weight);
   font-size: var(--base-font-size);
   color: var(--text-color);
+  line-height: 1.5;
   
 }
 
 h1, h2, h3, h4, h5, h6 {
   
+  font-family: var(--base-heading-font-family);
+  font-weight: var(--base-heading-font-weight);
   margin-top: 0;
   
 }
@@ -76,7 +93,7 @@ a:hover {
 .emojifize {
   
   max-width: 780px;
-  margin: 0 auto calc(var(--base-spacing) * 4);
+  margin: 0 auto calc(var(--base-spacing) * 8);
   
 }
 
@@ -89,6 +106,16 @@ a:hover {
   
   min-height: 250px;
   
+}
+
+@media screen and (max-width: 680px) {
+
+    .emojifize__form {
+
+      display: block;
+
+    }
+
 }
 
 .emojifize__text-input {
@@ -113,6 +140,8 @@ a:hover {
   flex-direction: column;
   justify-content: start;
   align-items: start;
+  
+  margin-bottom: var(--base-spacing);
   
 }
 
@@ -146,6 +175,23 @@ a:hover {
   
   width: 100%;
   flex-grow: 2;
+  
+}
+
+@media screen and (max-width: 680px) {
+  
+  .emojifize__area {
+
+    margin-bottom: calc(var(--base-spacing) * 2 );
+    
+  }
+
+}
+
+.emojifize__area.error {
+  
+  border-color: yellow;
+  background-color: lightyellow;
   
 }
 
@@ -192,7 +238,7 @@ a:hover {
   
   color: white;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 3;
   
   cursor: pointer;
@@ -254,7 +300,7 @@ a:hover {
 
   max-width: 780px;
   margin: 0 auto;
-  background: #eee;
+  background: lavenderblush;
   padding: 2%;
   border-radius: 6px;
   
