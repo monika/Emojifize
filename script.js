@@ -10,23 +10,70 @@ let clear = document.querySelector('.emojifize__action.text');
 /* Action that triggers everything */
 button.onclick = function(event) {
   
-  // Don't actually submit
+  // Pwease don't submit
   event.preventDefault();
-  
-  // Check that form inputs have content
 
-  // Grab new data, set new variables
-  let textContent = textInput.value;
-  let emojiContent = emojiInput.value;
+  // Set variables
+  let textContent;
+  let emojiContent;
   let spaceRegex = /\s/g;
-
-  // Change to ALL CAPS + replace spaces with emoji
-  let emojifizeText = textContent.toUpperCase().replace(spaceRegex, ' ' + emojiContent + ' ');
+  let errorMessage = 'Please enter some text 👍'
   
-  resultOutput.value = emojifizeText;
+  // Default emoji is clapping unless other emoji are present
+  if ( emojiInput.value == ''){
+    
+    emojiContent = '👏';
+        
+  } else {
+    
+    emojiContent = emojiInput.value;
+    
+  }
+  
+  // Text must be present
+  if ( textInput.value == ''){
+      
+    textContent = textInput.value = errorMessage;
+    textInput.classList.add('error');
+        
+    return false;
+    
+  } else if ( textInput.value == errorMessage ) {
+    
+    return false;
+    
+  } else {
+  
+    textContent = textInput.value;
+  
+  }
+  
+  // Change to ALL CAPS + replace spaces with emoji
+  let emojifizedText = textContent
+                        .toUpperCase()
+                        .replace(/([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g, '')
+                        .replace(spaceRegex, ' ' + emojiContent + ' ');
+  
+  // Bookend with emoji
+
+  emojifizedText = emojiContent + ' ' + emojifizedText + ' ' + emojiContent;
+  
+  resultOutput.value = emojifizedText;
   resultOutput.focus();
   result.style.display = 'block';
 
+}
+
+/* Clear Error in text area when interacted with */
+textInput.onclick = function(){
+  
+  if ( this.classList.contains('error') ) {
+    
+    this.classList.remove('error');
+    this.value = '';
+    
+  }
+    
 }
 
 /* Select all text when clicking into results */
@@ -40,7 +87,7 @@ resultOutput.onclick = function(event){
 /* Action that clears form */
 clear.onclick = function(event) {
   
-  // Don't actually click
+  // Pwease don't click
   event.preventDefault();
   
   // Clear That Form!
